@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 03:10:10 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/01 21:15:30 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/01 23:24:04 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,14 @@ void check_wall(t_long *so_long);
 void check_char(t_long *so_long);
 int key_handler(int key, t_long *so_long);
 t_win *ft_initial(t_long *so_long);
+void right_player(t_long *so_long);
+void draw_map(t_long *so_long);
+t_long *find_player(t_long *so_long);
+void left_player(t_long *so_long);
 void up_player(t_long *so_long);
+void down_player(t_long *so_long);
+int key_handler(int key, t_long *so_long);
+void stop_player(t_long *so_long);
+void eat_coin( t_long *so_long);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 16:26:45 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/01 21:43:14 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/01 22:14:59 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,32 +47,7 @@ void put_img(t_long *so_long)
 {
     so_long->s_win = ft_initial(so_long);
     so_long->s_win->win = mlx_new_window(so_long->s_win->mlx, so_long->s_win->x, so_long->s_win->y, "soo_long");
-    while(so_long->maps[so_long->s_win->f])
-    {
-        so_long->s_win->j = 0;
-        so_long->s_win->g = 0;
-        while (so_long->maps[so_long->s_win->f][so_long->s_win->g])
-        {
-            if (so_long->maps[so_long->s_win->f][so_long->s_win->g] == 'C')
-                put_collect(so_long, so_long->s_win, so_long->s_win->i, so_long->s_win->j);
-            else if (so_long->maps[so_long->s_win->f][so_long->s_win->g] == 'P' )
-            {
-                so_long->xp = so_long->s_win->g;
-                so_long->yp = so_long->s_win->f;
-                put_player(so_long, so_long->s_win);
-            }
-            else if (so_long->maps[so_long->s_win->f][so_long->s_win->g] == '1')
-                put_wall(so_long, so_long->s_win, so_long->s_win->i, so_long->s_win->j);
-            else if (so_long->maps[so_long->s_win->f][so_long->s_win->g] == 'E')
-                put_dor(so_long, so_long->s_win, so_long->s_win->i, so_long->s_win->j);
-            else if (so_long->maps[so_long->s_win->f][so_long->s_win->g] == '0')
-                put_ground(so_long, so_long->s_win, so_long->s_win->i, so_long->s_win->j);
-            so_long->s_win->g++;
-            so_long->s_win->j += 50;
-        }
-        so_long->s_win->i += 50;
-        so_long->s_win->f++; 
-    }
+    draw_map(so_long);
     mlx_key_hook(so_long->s_win->win, key_handler, so_long);
     mlx_loop(so_long->s_win->mlx);
 } 

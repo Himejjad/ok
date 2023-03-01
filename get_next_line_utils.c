@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 22:10:15 by himejjad          #+#    #+#             */
-/*   Updated: 2023/02/28 23:38:29 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/01 16:09:01 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	ft_strlen(char *s)
 	int	i;
 
 	i = 0;
+
 	if (!s)
 		return (0);
 	while (s[i])

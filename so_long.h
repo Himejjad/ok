@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 03:10:10 by himejjad          #+#    #+#             */
-/*   Updated: 2023/02/28 23:11:41 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/01 16:30:37 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ void check_d_newline(char *map);
 void check_wall(t_long *so_long);
 void check_char(t_long *so_long);
 int key_handler(int key, t_long *so_long);
+t_win *ft_initial(t_long *so_long);
 
 #endif

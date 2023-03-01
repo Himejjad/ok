@@ -24,21 +24,23 @@ void    ft_int(t_long *so_long)
 
 int key_handler(int key, t_long *so_long)
 {
-    int j;
-    int i;
+    // int j;
+    // int i;
     // int x = so_long->width*50;
     // int y = so_long->hight*50;
-    t_win *s_win = NULL;
+    // t_win *s_win = ft_initial(so_long);
     
-    i = 0;
-    j = 0;
+    // i = 0;
+    // j = 0;
     printf("%d\n", so_long->yp);
     if (key == 124) 
     {
-        int x = so_long->width*50;
-        int y = so_long->hight*50;
-        s_win->img = mlx_xpm_file_to_image(s_win->mlx, "ground.xpm", &x, &y);
-        mlx_put_image_to_window(s_win->mlx, s_win->win, s_win->img, so_long->yp, so_long->xp);  
+       up_player(so_long);
+    }
+    if (key == 53)
+    {
+        write(1, "You Exit The Game\n", 19);
+        exit(0);
     }
     return key;
 }

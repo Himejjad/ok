@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 03:10:10 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/01 20:06:03 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/01 21:15:30 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int check_ber(char *file);
 void map_check(t_long *so_long);
 void chec_pos(t_long *so_long);
 void put_ground(t_long *so_long, t_win *s_win, int i, int j);
-void put_player(t_long *so_long, t_win *s_win, int i, int j);
+void put_player(t_long *so_long, t_win *s_win);
 void put_img(t_long *so_long);
 void put_dor(t_long *so_long, t_win *s_win, int i, int j);
 void put_wall(t_long *so_long, t_win *s_win, int i, int j);
@@ -63,5 +63,6 @@ void check_wall(t_long *so_long);
 void check_char(t_long *so_long);
 int key_handler(int key, t_long *so_long);
 t_win *ft_initial(t_long *so_long);
+void up_player(t_long *so_long);
 
 #endif

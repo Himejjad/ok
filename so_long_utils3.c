@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_utils3.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
+/*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 16:26:45 by himejjad          #+#    #+#             */
-/*   Updated: 2023/02/26 23:24:47 by aaizza           ###   ########.fr       */
+/*   Updated: 2023/02/28 23:43:23 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void put_img(t_long *so_long)
         s_win->i += 50;
         s_win->f++; 
     }
+    mlx_hook(s_win->mlx, 2, 1L << 0, key_handler, so_long);                                                                                                                                                                                                                           
     mlx_loop(s_win->mlx);
 } 
 
@@ -91,6 +92,7 @@ void parce_map(t_long  *so_long)
         get_stock(so_long);
         so_long->maps = ft_split(so_long->stock, '\n');
         so_long->map_copy = ft_split(so_long->stock, '\n');
+        so_long->map_m = ft_split(so_long->stock, '\n');
         ft_int(so_long);
         check_d_newline(so_long->stock);
         check_wall(so_long);

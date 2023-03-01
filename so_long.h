@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
+/*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 03:10:10 by himejjad          #+#    #+#             */
-/*   Updated: 2023/02/26 23:37:17 by aaizza           ###   ########.fr       */
+/*   Updated: 2023/02/28 23:11:41 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 # define SO_LONG_H
 
 #include <mlx.h>
+
+typedef struct s_win
+{
+    void *mlx;
+    void *win;
+    void *img;
+    int x,y,g,f,j,i;
+}   t_win;
 
 typedef struct s_slong
 {
@@ -27,15 +35,10 @@ typedef struct s_slong
     char *stock;
     char **maps;
     char **map_copy;
+    char **map_m;
     int fd;
+    t_win *s_win;
 }   t_long;
-typedef struct s_win
-{
-    void *mlx;
-    void *win;
-    void *img;
-    int x,y,g,f,j,i;
-}   t_win;
 
 int	ft_strcmp(char *s1,char *s2);
 char	**ft_split(char  *s, char c);
@@ -58,5 +61,6 @@ void    ft_int(t_long *so_long);
 void check_d_newline(char *map);
 void check_wall(t_long *so_long);
 void check_char(t_long *so_long);
+int key_handler(int key, t_long *so_long);
 
 #endif

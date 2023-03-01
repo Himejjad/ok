@@ -28,16 +28,17 @@ int key_handler(int key, t_long *so_long)
     int i;
     // int x = so_long->width*50;
     // int y = so_long->hight*50;
-    t_win *s_win = ft_initial(so_long);
+    t_win *s_win = NULL;
     
-    (void )so_long;
     i = 0;
     j = 0;
-    // printf("%d\n", key);
+    printf("%d\n", so_long->yp);
     if (key == 124) 
     {
-        i += 50;
-        put_player(so_long, s_win, s_win->i, s_win->j);
+        int x = so_long->width*50;
+        int y = so_long->hight*50;
+        s_win->img = mlx_xpm_file_to_image(s_win->mlx, "ground.xpm", &x, &y);
+        mlx_put_image_to_window(s_win->mlx, s_win->win, s_win->img, so_long->yp, so_long->xp);  
     }
     return key;
 }

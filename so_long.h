@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 03:10:10 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/01 16:30:37 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:06:03 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 #include <mlx.h>
-
+#include "get_next_line.h"
 typedef struct s_win
 {
     void *mlx;

@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 16:26:45 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/01 16:53:52 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:28:29 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,30 +46,30 @@ t_win *ft_initial(t_long *so_long)
 }
 void put_img(t_long *so_long)
 {
-    // t_win *s_win = ft_initial(so_long);
-    // while(so_long->maps[s_win->f])
-    // {
-    //     s_win->j = 0;
-    //     s_win->g = 0;
-    //     while (so_long->maps[s_win->f][s_win->g])
-    //     {
-    //         if (so_long->maps[s_win->f][s_win->g] == 'C')
-    //             put_collect(so_long, s_win, s_win->i, s_win->j);
-    //         else if (so_long->maps[s_win->f][s_win->g] == 'P')
-    //             put_player(so_long, s_win, s_win->i, s_win->j);
-    //         else if (so_long->maps[s_win->f][s_win->g] == '1')
-    //             put_wall(so_long, s_win, s_win->i, s_win->j);
-    //         else if (so_long->maps[s_win->f][s_win->g] == 'E')
-    //             put_dor(so_long, s_win, s_win->i, s_win->j);
-    //         else if (so_long->maps[s_win->f][s_win->g] == '0')
-    //             put_ground(so_long, s_win, s_win->i, s_win->j);
-    //         s_win->g++;
-    //         s_win->j += 50;
-    //     }
-    //     s_win->i += 50;
-    //     s_win->f++; 
-    // }
-    mlx_key_hook(s_win->mlx, key_handler, so_long);
+    t_win *s_win = ft_initial(so_long);
+    while(so_long->maps[s_win->f])
+    {
+        s_win->j = 0;
+        s_win->g = 0;
+        while (so_long->maps[s_win->f][s_win->g])
+        {
+            if (so_long->maps[s_win->f][s_win->g] == 'C')
+                put_collect(so_long, s_win, s_win->i, s_win->j);
+            else if (so_long->maps[s_win->f][s_win->g] == 'P')
+                put_player(so_long, s_win, s_win->i, s_win->j);
+            else if (so_long->maps[s_win->f][s_win->g] == '1')
+                put_wall(so_long, s_win, s_win->i, s_win->j);
+            else if (so_long->maps[s_win->f][s_win->g] == 'E')
+                put_dor(so_long, s_win, s_win->i, s_win->j);
+            else if (so_long->maps[s_win->f][s_win->g] == '0')
+                put_ground(so_long, s_win, s_win->i, s_win->j);
+            s_win->g++;
+            s_win->j += 50;
+        }
+        s_win->i += 50;
+        s_win->f++; 
+    }
+    mlx_key_hook(s_win->win, key_handler, so_long);
     mlx_loop(s_win->mlx);
 } 
 

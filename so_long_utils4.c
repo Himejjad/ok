@@ -24,53 +24,20 @@ void    ft_int(t_long *so_long)
 
 int key_handler(int key, t_long *so_long)
 {
-    // int j;
-    // int i;
-    // t_win *s_win = ft_initial(so_long);
+    int j;
+    int i;
+    // int x = so_long->width*50;
+    // int y = so_long->hight*50;
+    t_win *s_win = ft_initial(so_long);
     
     (void )so_long;
-    // i = 0;
-    // j = 0;
-    printf("%d\n", key);
-    // if (key == 125) 
-    // {
-    //     j += 50;
-    //      s_win->img = mlx_xpm_file_to_image(s_win->mlx, "dor.xpm", &s_win->x, &s_win->y);
-    //     mlx_put_image_to_window(s_win->mlx, s_win->win, s_win->img, j, i);
-    //     mlx_destroy_image(s_win->mlx, s_win->img);
-    // }
-    // if (key == 126)
-    // {
-    //      s_win->img = mlx_xpm_file_to_image(s_win->mlx, "ground.xpm", &s_win->x, &s_win->y);
-    //     mlx_put_image_to_window(s_win->mlx, s_win->win, s_win->img, j, i);
-    //     mlx_destroy_image(s_win->mlx, s_win->img);
-    //     j -= 50;
-    //    s_win->img = mlx_xpm_file_to_image(s_win->mlx, "dor.xpm", &s_win->x, &s_win->y);
-    //     mlx_put_image_to_window(s_win->mlx, s_win->win, s_win->img, j, i);
-    //     mlx_destroy_image(s_win->mlx, s_win->img);
-    // }
-    // if (key == 123)
-    // {
-    //     i += 50;
-    //      s_win->img = mlx_xpm_file_to_image(s_win->mlx, "dor.xpm", &s_win->x, &s_win->y);
-    //     mlx_put_image_to_window(s_win->mlx, s_win->win, s_win->img, j, i);
-    //     mlx_destroy_image(s_win->mlx, s_win->img);
-    // }
-    // if (key == 124) 
-    // {
-    //     i -= 50;
-    //      s_win->img = mlx_xpm_file_to_image(s_win->mlx, "dor.xpm", &s_win->x, &s_win->y);
-    //     mlx_put_image_to_window(s_win->mlx, s_win->win, s_win->img, j, i);
-    //     mlx_destroy_image(s_win->mlx, s_win->img);
-    // }
+    i = 0;
+    j = 0;
+    // printf("%d\n", key);
+    if (key == 124) 
+    {
+        i += 50;
+        put_player(so_long, s_win, s_win->i, s_win->j);
+    }
     return key;
 }
-
-
-
-
-// void ft_move(t_long *so_long)
-// {
-    
-    
-// }

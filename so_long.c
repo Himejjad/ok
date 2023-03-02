@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 02:51:09 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/01 16:40:56 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/02 00:09:42 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ int main(int ac, char **av)
     }
     else
         error();
+    // count_c(so_long);
     put_img(so_long);
 }

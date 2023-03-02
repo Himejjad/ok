@@ -24,12 +24,31 @@ void    ft_int(t_long *so_long)
 
 void eat_coin( t_long *so_long)
 {
-    if (so_long->maps[so_long->yp][so_long->xp + 1] == 'C')
-        draw_map(so_long);
-    if (so_long->maps[so_long->yp][so_long->xp - 1] == 'C')
-        draw_map(so_long);
-    if (so_long->maps[so_long->yp - 1 ][so_long->xp] == 'C')
-        draw_map(so_long);
-    if (so_long->maps[so_long->yp + 1][so_long->xp] == 'C')
-        draw_map(so_long);
+    if (so_long->collect >= 0)
+    {
+        if (so_long->maps[so_long->yp][so_long->xp] == 'C')
+        {
+            so_long->maps[so_long->yp][so_long->xp] = '0';
+            so_long->collect--;
+            draw_map(so_long);
+        }
+        if (so_long->maps[so_long->yp][so_long->xp] == 'C')
+        {
+            so_long->maps[so_long->yp][so_long->xp] = '0';
+            so_long->collect--;
+            draw_map(so_long);
+        }
+        if (so_long->maps[so_long->yp][so_long->xp] == 'C')
+        {
+            so_long->maps[so_long->yp][so_long->xp] = '0';
+            so_long->collect--;
+            draw_map(so_long);
+        }
+        if (so_long->maps[so_long->yp][so_long->xp] == 'C')
+        {
+            so_long->maps[so_long->yp][so_long->xp] = '0';
+            so_long->collect--;
+            draw_map(so_long);
+        }
+    }
 }

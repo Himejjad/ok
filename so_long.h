@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 03:10:10 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/01 23:24:04 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/02 01:52:40 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_slong
     int exit;
     int width;
     int hight;
+    int count_c;
     char *stock;
     char **maps;
     char **map_copy;
@@ -44,6 +45,7 @@ int	ft_strcmp(char *s1,char *s2);
 char	**ft_split(char  *s, char c);
 char	*ft_line(char *buffer);
 void error();
+void	exit_player(t_long *so_long);
 int count_lines(char **map);
 int check_ber(char *file);
 void map_check(t_long *so_long);
@@ -72,5 +74,7 @@ void down_player(t_long *so_long);
 int key_handler(int key, t_long *so_long);
 void stop_player(t_long *so_long);
 void eat_coin( t_long *so_long);
+int  count_c(t_long *so_long);
+void check_exit_wall(t_long *so_long);
 
 #endif

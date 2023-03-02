@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 03:10:10 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/02 01:52:40 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/02 21:52:27 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,6 @@ int key_handler(int key, t_long *so_long);
 void stop_player(t_long *so_long);
 void eat_coin( t_long *so_long);
 int  count_c(t_long *so_long);
-void check_exit_wall(t_long *so_long);
+void check_exit(t_long *so_long);
 
 #endif

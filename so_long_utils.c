@@ -6,14 +6,14 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 03:10:52 by himejjad          #+#    #+#             */
-/*   Updated: 2023/02/28 20:54:46 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/03 19:07:07 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "get_next_line.h"
 
-int	ft_strcmp(char *s1,char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int		i;
 
@@ -81,30 +81,30 @@ char	**ft_split(char *s, char c)
 	return (new);
 }
 
-void check_char(t_long *so_long)
+void	check_char(t_long *so_long)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    j = 0;
-    while(so_long->maps[i])
-   {
-        while(j < so_long->width)
-        {
-            if (so_long->maps[i][j] == 'P')
-                so_long->player++;
-            else if (so_long->maps[i][j] == 'E')
-                so_long->exit++;
-            else if (so_long->maps[i][j] == 'C')
-                so_long->collect++;
-            else if (so_long->maps[i][j] != '1' && so_long->maps[i][j] != '0')
-                error();
-            j++;
-        }
-        i++;
-        j = 0;
-   }
-   if (so_long->player != 1 || so_long->exit != 1 || so_long->collect < 1)
-    error();
+	i = 0;
+	j = 0;
+	while (so_long->maps[i])
+	{
+		while (j < so_long->width)
+		{
+			if (so_long->maps[i][j] == 'P')
+				so_long->player++;
+			else if (so_long->maps[i][j] == 'E')
+				so_long->exit++;
+			else if (so_long->maps[i][j] == 'C')
+				so_long->collect++;
+			else if (so_long->maps[i][j] != '1' && so_long->maps[i][j] != '0')
+				error();
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	if (so_long->player != 1 || so_long->exit != 1 || so_long->collect < 1)
+		error();
 }

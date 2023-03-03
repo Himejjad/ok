@@ -17,7 +17,7 @@ void put_ground(t_long *so_long, t_win *s_win, int i, int j)
 {
     int x = so_long->width*50;
     int y = so_long->hight*50;
-    s_win->img = mlx_xpm_file_to_image(s_win->mlx, "ground.xpm", &x, &y);
+    s_win->img = mlx_xpm_file_to_image(s_win->mlx, "texture/ground.xpm", &x, &y);
     mlx_put_image_to_window(s_win->mlx, s_win->win, s_win->img, j, i);
     mlx_destroy_image(s_win->mlx, s_win->img);
 }
@@ -25,7 +25,7 @@ void put_collect(t_long *so_long, t_win *s_win, int i, int j)
 {
     int x = so_long->width*50;
     int y = so_long->hight*50;
-    s_win->img = mlx_xpm_file_to_image(s_win->mlx, "coin7.xpm", &x, &y);
+    s_win->img = mlx_xpm_file_to_image(s_win->mlx, "texture/coin7.xpm", &x, &y);
     mlx_put_image_to_window(s_win->mlx, s_win->win, s_win->img, j, i);
     mlx_destroy_image(s_win->mlx, s_win->img);
 }
@@ -33,7 +33,7 @@ void put_dor(t_long *so_long, t_win *s_win, int i, int j)
 {
     int x = so_long->width*50;
     int y = so_long->hight*50;
-    s_win->img = mlx_xpm_file_to_image(s_win->mlx, "dor.xpm", &x, &y);
+    s_win->img = mlx_xpm_file_to_image(s_win->mlx, "texture/dor.xpm", &x, &y);
     mlx_put_image_to_window(s_win->mlx, s_win->win, s_win->img, j, i);
     mlx_destroy_image(s_win->mlx, s_win->img);
 }
@@ -41,7 +41,7 @@ void put_player(t_long *so_long, t_win *s_win)
 {
     int x = so_long->width*50;
     int y = so_long->hight*50;
-    s_win->img = mlx_xpm_file_to_image(s_win->mlx, "player7.xpm", &x, &y);
+    s_win->img = mlx_xpm_file_to_image(s_win->mlx, "texture/player7.xpm", &x, &y);
     mlx_put_image_to_window(s_win->mlx, s_win->win, s_win->img, so_long->xp * 50, so_long->yp * 50);
     mlx_destroy_image(s_win->mlx, s_win->img);
 }
@@ -49,7 +49,7 @@ void put_wall(t_long *so_long, t_win *s_win, int i, int j)
 {
     int x = so_long->width*50;
     int y = so_long->hight*50;
-    s_win->img = mlx_xpm_file_to_image(s_win->mlx, "wall.xpm", &x, &y);
+    s_win->img = mlx_xpm_file_to_image(s_win->mlx, "texture/wall.xpm", &x, &y);
     mlx_put_image_to_window(s_win->mlx, s_win->win, s_win->img, j, i);
     mlx_destroy_image(s_win->mlx, s_win->img);
 }

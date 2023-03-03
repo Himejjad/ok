@@ -32,19 +32,19 @@ void eat_coin( t_long *so_long)
             so_long->collect--;
             draw_map(so_long);
         }
-        if (so_long->maps[so_long->yp][so_long->xp] == 'C')
+        else if (so_long->maps[so_long->yp][so_long->xp] == 'C')
         {
             so_long->maps[so_long->yp][so_long->xp] = '0';
             so_long->collect--;
             draw_map(so_long);
         }
-        if (so_long->maps[so_long->yp][so_long->xp] == 'C')
+        else if (so_long->maps[so_long->yp][so_long->xp] == 'C')
         {
             so_long->maps[so_long->yp][so_long->xp] = '0';
             so_long->collect--;
             draw_map(so_long);
         }
-        if (so_long->maps[so_long->yp][so_long->xp] == 'C')
+        else if (so_long->maps[so_long->yp][so_long->xp] == 'C')
         {
             so_long->maps[so_long->yp][so_long->xp] = '0';
             so_long->collect--;

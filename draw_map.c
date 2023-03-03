@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 20:31:38 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/03 02:35:05 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/03 03:20:26 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,15 @@ void check_exit(t_long *so_long)
 
     if (so_long->collect == 0 && so_long->maps[so_long->yp +1][so_long->xp] == 'E')
         so_long->maps[so_long->yp + 1][so_long->xp] = 'x';
-
     else if (so_long->collect == 0 && so_long->maps[so_long->yp - 1][so_long->xp] == 'E')
         so_long->maps[so_long->yp - 1][so_long->xp] = 'x';
     else if (so_long->collect == 0 && so_long->maps[so_long->yp][so_long->xp - 1] == 'E')
-        so_long->maps[so_long->yp][so_long->xp - 1] = 'x';
-        
+        so_long->maps[so_long->yp][so_long->xp - 1] = 'x'; 
     else if (so_long->collect == 0 && so_long->maps[so_long->yp][so_long->xp + 1] == 'E')
         so_long->maps[so_long->yp][so_long->xp + 1] = 'x';
-    if (so_long->maps[so_long->yp][so_long->xp ] == 'x')
+    if (so_long->maps[so_long->yp][so_long->xp] == 'x')
+    {
+        printf("All collect was done\n");
         exit(0);
+    }
 }

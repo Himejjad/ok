@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 03:10:10 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/02 21:52:27 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/03 03:06:58 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_slong
     int exit;
     int width;
     int hight;
-    int count_c;
+    int move;
     char *stock;
     char **maps;
     char **map_copy;
@@ -76,5 +76,6 @@ void stop_player(t_long *so_long);
 void eat_coin( t_long *so_long);
 int  count_c(t_long *so_long);
 void check_exit(t_long *so_long);
+void moves(t_long *so_long);
 
 #endif

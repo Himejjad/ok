@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 20:31:38 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/03 03:20:26 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:30:31 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,11 @@ void draw_map(t_long *so_long)
     put_player(so_long, so_long->s_win);
 }
 
-void check_exit(t_long *so_long)
+void put_img(t_long *so_long)
 {
-
-    if (so_long->collect == 0 && so_long->maps[so_long->yp +1][so_long->xp] == 'E')
-        so_long->maps[so_long->yp + 1][so_long->xp] = 'x';
-    else if (so_long->collect == 0 && so_long->maps[so_long->yp - 1][so_long->xp] == 'E')
-        so_long->maps[so_long->yp - 1][so_long->xp] = 'x';
-    else if (so_long->collect == 0 && so_long->maps[so_long->yp][so_long->xp - 1] == 'E')
-        so_long->maps[so_long->yp][so_long->xp - 1] = 'x'; 
-    else if (so_long->collect == 0 && so_long->maps[so_long->yp][so_long->xp + 1] == 'E')
-        so_long->maps[so_long->yp][so_long->xp + 1] = 'x';
-    if (so_long->maps[so_long->yp][so_long->xp] == 'x')
-    {
-        printf("All collect was done\n");
-        exit(0);
-    }
-}
+    so_long->s_win = ft_initial(so_long);
+    so_long->s_win->win = mlx_new_window(so_long->s_win->mlx, so_long->s_win->x, so_long->s_win->y, "soo_long");
+    draw_map(so_long);
+    mlx_key_hook(so_long->s_win->win, key_handler, so_long);
+    mlx_loop(so_long->s_win->mlx);
+} 

@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 20:55:28 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/03 03:49:05 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:09:15 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void up_player(t_long *so_long)
         so_long->yp -= 1;
         draw_map(so_long);
         eat_coin(so_long);
+         moves(so_long);
      }
 }
 void down_player(t_long *so_long)
@@ -74,10 +75,4 @@ int key_handler(int key, t_long *so_long)
         exit(0);
     }
     return key;
-}
-void moves(t_long *so_long)
-{
-    check_exit(so_long);
-    so_long->move++;
-    printf("moves : %d\n",  so_long->move);
 }

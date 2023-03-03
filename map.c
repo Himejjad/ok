@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils3.c                                   :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 16:26:45 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/03 02:07:56 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:27:47 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,24 +33,6 @@ void chec_pos(t_long *so_long)
         i++;
     }
 }
-t_win *ft_initial(t_long *so_long)
-{
-    t_win *s_win = malloc(sizeof(t_win));
-    s_win->mlx = mlx_init();
-    s_win->y = so_long->hight*50;
-    s_win->x = so_long->width*50;
-    s_win->f = 0;
-    s_win->i = 0;
-    return(s_win);
-}
-void put_img(t_long *so_long)
-{
-    so_long->s_win = ft_initial(so_long);
-    so_long->s_win->win = mlx_new_window(so_long->s_win->mlx, so_long->s_win->x, so_long->s_win->y, "soo_long");
-    draw_map(so_long);
-    mlx_key_hook(so_long->s_win->win, key_handler, so_long);
-    mlx_loop(so_long->s_win->mlx);
-} 
 
 void get_stock(t_long  *so_long)
 {
@@ -73,10 +55,9 @@ void parce_map(t_long  *so_long)
         get_stock(so_long);
         so_long->maps = ft_split(so_long->stock, '\n');
         so_long->map_copy = ft_split(so_long->stock, '\n');
-        so_long->map_m = ft_split(so_long->stock, '\n');
         ft_int(so_long);
         check_d_newline(so_long->stock);
         check_wall(so_long);
-        // write(1,"\033[32m", 5);
-        // write(1,"VALID\n", 7);
+        write(1,"\033[32m", 5);
+        write(1,"VALID\n", 7);
 }

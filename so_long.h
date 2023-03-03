@@ -6,7 +6,7 @@
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 03:10:10 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/03 03:06:58 by himejjad         ###   ########.fr       */
+/*   Updated: 2023/03/03 18:12:30 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <mlx.h>
 #include "get_next_line.h"
+#include "ft_printf.h"
 typedef struct s_win
 {
     void *mlx;
@@ -63,19 +64,18 @@ void    ft_int(t_long *so_long);
 void check_d_newline(char *map);
 void check_wall(t_long *so_long);
 void check_char(t_long *so_long);
-int key_handler(int key, t_long *so_long);
 t_win *ft_initial(t_long *so_long);
 void right_player(t_long *so_long);
 void draw_map(t_long *so_long);
-t_long *find_player(t_long *so_long);
 void left_player(t_long *so_long);
 void up_player(t_long *so_long);
 void down_player(t_long *so_long);
 int key_handler(int key, t_long *so_long);
-void stop_player(t_long *so_long);
 void eat_coin( t_long *so_long);
-int  count_c(t_long *so_long);
 void check_exit(t_long *so_long);
 void moves(t_long *so_long);
+void    flood_fill(char **map, int xp, int yp);
+void  check_wall2(t_long *so_long);
+void error();
 
 #endif

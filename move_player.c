@@ -5,67 +5,69 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: himejjad <himejjad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 20:31:38 by himejjad          #+#    #+#             */
-/*   Updated: 2023/03/02 23:18:20 by himejjad         ###   ########.fr       */
+/*   Created: 2023/02/28 20:55:28 by himejjad          #+#    #+#             */
+/*   Updated: 2023/03/03 02:52:51 by himejjad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void ground(t_long *so_long)
+void right_player(t_long *so_long)
 {
-    int i;
-    int j;
-    i = 0;
-    int count = 0;;
-    while (so_long->maps[i])
-    {
-        j = 0;
-        while (so_long->maps[i][j])
-        {
-             if (so_long->maps[i][j] == 'C')
-            count++;
-            put_ground(so_long, so_long->s_win, i * 50, j * 50);
-                j++;
-        }
-        i++;
-    }
-    so_long->count_c = count;
+    so_long->xp += 1;
+    draw_map(so_long);
+    eat_coin(so_long);
 }
 
-void draw_map(t_long *so_long)
+void left_player(t_long *so_long)
 {
-    int i;
-    int j;
-    i = 0;
-    ground(so_long);
-    while (so_long->maps[i])
-    {
-        j = 0;
-        while (so_long->maps[i][j])
-        {
-            if (so_long->maps[i][j] == '1')
-                put_wall(so_long, so_long->s_win, i * 50, j * 50);
-            else if (so_long->maps[i][j] == 'E')
-                put_dor(so_long, so_long->s_win, i * 50, j * 50);
-            else if (so_long->maps[i][j] == 'C')
-                put_collect(so_long, so_long->s_win, i * 50, j * 50);
-                j++;
-        }
-        i++;
-    }
-    put_player(so_long, so_long->s_win);
+    so_long->xp -= 1;
+    draw_map(so_long);
+    eat_coin(so_long);
+}
+void up_player(t_long *so_long)
+{
+    so_long->yp -= 1;
+    draw_map(so_long);
+    eat_coin(so_long);
+}
+void down_player(t_long *so_long)
+{
+    so_long->yp += 1;
+    draw_map(so_long);
+    eat_coin(so_long);
 }
 
-void check_exit(t_long *so_long)
-{
-    if (so_long->collect == 0 && so_long->maps[so_long->yp +1][so_long->xp] == 'E')
+int key_handler(int key, t_long *so_long)
+{    
+    if (key == 124 && so_long->maps[so_long->yp][so_long->xp - 1] != '1' 
+    && so_long->maps[so_long->yp][so_long->xp + 1] != 'E') 
+    {
+        right_player(so_long);
+        check_exit(so_long);
+    }
+    else if (key == 123 && so_long->maps[so_long->yp][so_long->xp + 1] != '1' 
+    && so_long->maps[so_long->yp][so_long->xp - 1] != 'E') 
+    {
+       left_player(so_long);
+        check_exit(so_long);
+    }
+    else if (key == 126 && so_long->maps[so_long->yp - 1 ][so_long->xp] != '1'
+     && so_long->maps[so_long->yp - 1][so_long->xp] != 'E') 
+     {
+        up_player(so_long);
+        check_exit(so_long);
+     }
+    else if (key == 125 && so_long->maps[so_long->yp + 1][so_long->xp] != '1' 
+    && so_long->maps[so_long->yp + 1][so_long->xp] != 'E' ) 
+    {
+        down_player(so_long);
+        check_exit(so_long);
+    }
+    else if (key == 53)
+    {
+        write(1, "You Exit The Game\n", 19);
         exit(0);
-    else if (so_long->collect == 0 && so_long->maps[so_long->yp - 1][so_long->xp] == 'E')
-        exit(0);
-    else if (so_long->collect == 0 && so_long->maps[so_long->yp][so_long->xp +1] == 'E')
-        exit(0);
-    else if (so_long->collect == 0 && so_long->maps[so_long->yp][so_long->xp -1] == 'E')
-        exit(0);
-	
+    }
+    return key;
 }
